@@ -1,0 +1,44 @@
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "name": "Run Current Feature",
+//       "type": "node",
+//       "request": "launch",
+//       "program": "${workspaceFolder}/node_modules/.bin/cucumber-js",
+//       "args": [
+//         "--require-module",
+//         "ts-node/register",
+//         "--require",
+//         "src/step-definitions/**/*.ts",
+//         "${file}"
+//       ],
+//       "cwd": "${workspaceFolder}",
+//       "console": "integratedTerminal"
+//     }
+//   ]
+// }
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Current Feature",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/cucumber-js",
+      "args": [
+        "--require-module",
+        "ts-node/register",
+        "--require",
+        "src/step-definitions/**/*.ts",
+        "--require",
+        "src/support/**/*.ts",
+        "${relativeFile}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
